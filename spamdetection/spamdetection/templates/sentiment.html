@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta name="viewport" content="width-device-width, initial-scale=1.0">
+	<title>About</title>
+	<link rel="stylesheet" href="{{ url_for('static', filename='css/sentiment.css')}}">
+</head>
+<body>
+	<div class="super">
+		<div class="good" data-tilt>
+		<img src="{{ url_for('static', filename='images/sentiment.png')}}"><br>
+			<h2>SENTIMENT ANALYSIS</h2><br>
+			<p>Sentiment analysis is analytical technique that uses statistics, natural language processing, and machine learning to determine the emotional meaning of communications. 
+			</p><br>
+		</div>
+		<div>
+		<a href="/"><img src="{{ url_for('static', filename='images/homes.png')}}" class="home"></a>
+		</div>
+	</div>
+		<script src="{{ url_for('static', filename='js/Vanilla-tilt.js')}}"></script>
+</body>
+</head>

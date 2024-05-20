@@ -1,0 +1,27 @@
+<html>
+<head>
+<title>Login Form Design</title>
+	<link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/front.css')}}">
+<body>
+	<div class="loginbox">
+	<img src="{{ url_for('static', filename='images/loginimg.png')}}" class="images">
+	<h1>LOGIN HERE</h1>
+	<form action="signin" method="post">
+		<p>User name</p>
+		<input type="text" name="user" placeholder="Enter Username">
+		<P>Password</p>
+		<input type="password" name="password" placeholder="Enter Password">
+		<input type="submit" name="" value="LOGIN"><br>
+		<div>
+			
+			<a href="logon">Create new account</a><br>
+		</div>
+		<div>
+		<a href="/"><img src="{{ url_for('static', filename='images/homes.png')}}" class="home" style="height:80px;width:80px;float:right"></a>
+		</div>
+	</form>
+	</div>
+		
+</body>
+</head>
+</html>

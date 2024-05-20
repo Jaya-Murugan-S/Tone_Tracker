@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta name="viewport" content="width-device-width, initial-scale=1.0">
+	<title>About</title>
+	<link rel="stylesheet" href="{{ url_for('static', filename='css/about.css')}}">
+</head>
+<body>
+	<div class="container">
+		<div class="card" data-tilt>
+		<img src="{{ url_for('static', filename='images/spelling.jpg')}}"><br>
+			<h2>ABOUT US</h2><br>
+			<p> ANANDAGEETHAN R B (20UCC004)</p><br>
+			<p> JAYA MURUGAN S (20UCC015)</p><br>
+			<p> SANDEEP S (20UCC030)</p><br>
+			<p> SUTHARSAN S (20UCC041)</p><br>
+			
+		</div>
+		<div>
+		<a href="/"><img src="{{ url_for('static', filename='images/homes.png')}}" class="home" style="height:80px;width:80px;float:right"></a>
+		</div>
+	</div>
+	<script src="{{ url_for('static', filename='js/Vanilla-tilt.js')}}"></script>
+
+</body>
+</html>

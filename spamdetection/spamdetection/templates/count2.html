@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{{session['username']}}</title>
+</head>
+<body>
+    <h1>Spam Link Detection</h1>
+    <input type="hidden" name="" id="da" value="{{session['value2']}}">
+    <button id="b1"></button>
+    <button id="b2"></button>
+    <button id="b3"></button>
+    <a href="vu"><button >Check again</button></a>
+    
+
+    <div style="border: 2px solid black;">
+
+    </div>
+</body>
+</html>
+<script  src="https://code.jquery.com/jquery-3.6.0.js"></script>
+<script>
+    var x=$("#da").val().split("**");
+    $("#b1").text("Spam Link"+x[0]);
+    $("#b2").text("non Spam Link"+x[1]);
+    $("#b3").text("wrong Link"+x[1]);
+    $("#b1").on("click",function(){
+        val="";
+        ne=1;
+        di=$("div");
+        $.post({url:"spam",success:function(e){
+            const obj = JSON.parse(e);
+            for(k of obj)
+            {
+              val+="<p>"+ne+". "+k+"</p>";
+              ne++;  
+            }
+            di.html(val);
+        }})
+    })
+    $("#b2").on("click",function(){
+        val="";
+        ne=1;
+        di=$("div");
+        $.post({url:"nonspam",success:function(e){
+            const obj = JSON.parse(e);
+            for(k of obj)
+            {
+                val+="<p>"+ne+". "+k+"</p>";
+                ne++;
+            }
+            di.html(val);
+        }})
+    })
+    
+    $("#b3").on("click",function(){
+        val="";
+        ne=1;
+        di=$("div");
+        $.post({url:"wrong",success:function(e){
+            const obj = JSON.parse(e);
+            for(k of obj)
+            {
+                val+="<p>"+ne+". "+k+"</p>";
+                ne++;
+            }
+            di.html(val);
+        }})
+    })
+</script>
